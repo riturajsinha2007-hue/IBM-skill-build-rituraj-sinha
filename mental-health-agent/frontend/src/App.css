@@ -1,0 +1,143 @@
+/* ── App Layout ── */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 230px;
+  min-width: 230px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.brand-icon { font-size: 1.5rem; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.55rem 0.85rem;
+  border-radius: 8px;
+  color: var(--text);
+  font-weight: 500;
+  transition: background 0.15s;
+  text-decoration: none;
+}
+
+.nav-links a:hover { background: var(--bg); }
+.nav-links a.active { background: #eff4ff; color: var(--accent); }
+
+.crisis-link { color: var(--danger) !important; }
+.crisis-link.active { background: #fff0f0 !important; }
+
+.sidebar-disclaimer {
+  font-size: 0.75rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ── Main ── */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Shared Components ── */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.page-subtitle {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+
+.btn:hover { opacity: 0.88; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-danger  { background: var(--danger); color: #fff; }
+.btn-ghost   { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+
+/* Risk badge */
+.risk-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.risk-low      { background: #d1fae5; color: #065f46; }
+.risk-moderate { background: #fef3c7; color: #92400e; }
+.risk-high     { background: #fee2e2; color: #991b1b; }
+
+/* ── Mobile ── */
+@media (max-width: 700px) {
+  .app-shell { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  .sidebar-brand { flex: 1; }
+  .nav-links { flex-direction: row; flex: unset; }
+  .sidebar-disclaimer { display: none; }
+  .main-content { padding: 1rem; }
+}

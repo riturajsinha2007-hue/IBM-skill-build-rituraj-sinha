@@ -1,0 +1,52 @@
+.dashboard { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.disclaimer-banner {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: var(--radius);
+  padding: 0.9rem 1.2rem;
+  font-size: 0.9rem;
+  color: #78350f;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.qa-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.qa-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); text-decoration: none; }
+
+.qa-icon  { font-size: 1.8rem; }
+.qa-label { font-weight: 700; color: var(--text); }
+.qa-desc  { font-size: 0.82rem; color: var(--muted); }
+
+.qa-chat      { background: #eff6ff; border-color: #bfdbfe; }
+.qa-journal   { background: #f5f3ff; border-color: #ddd6fe; }
+.qa-resources { background: #f0fdf4; border-color: #bbf7d0; }
+.qa-crisis    { background: #fff1f2; border-color: #fecdd3; }
+
+.tip-card h3 { margin-bottom: 0.5rem; font-size: 1rem; }
+.tip-card p  { color: var(--muted); }
+
+.about-card h3 { margin-bottom: 0.5rem; font-size: 1rem; }
+.about-card p  { color: var(--muted); margin-bottom: 0.75rem; }
+
+.agent-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
